@@ -21,7 +21,7 @@ namespace CreateCase
             driver = chromedriver;
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            driver.Navigate().GoToUrl("https://mas-man-publicnorlrg.dev.360online.com/");
+            driver.Navigate().GoToUrl("www.testFilelocation.com");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
@@ -30,22 +30,21 @@ namespace CreateCase
         [Test]
         public void Loginto360()
         {
-            IWebElement loginUser = driver.FindElement(By.Name("loginfmt"));
-            loginUser.SendKeys("360admin@test.p360o.com");
+            IWebElement loginUser = driver.FindElement(By.Name("login"));
+            loginUser.SendKeys("passwordtext");
             loginUser.SendKeys(Keys.Enter);
             Thread.Sleep(2000);
-            IWebElement loginpswrd = driver.FindElement(By.Id("i0118"));
-            loginpswrd.SendKeys("A0UKjUhaOaERhYh26CI4");
+            IWebElement loginpswrd = driver.FindElement(By.Id("element_id"));
+            loginpswrd.SendKeys("GUIKeyHere");
             loginpswrd.SendKeys(Keys.Enter);
-            IWebElement yesbtn = driver.FindElement(By.Id("idSIButton9"));
+            IWebElement yesbtn = driver.FindElement(By.Id("selectorIdhere"));
             yesbtn.Submit();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            //LogintoPublic360 loginPageOject = new LogintoPublic360();
-            //loginPageOject.Login(driver, "360admin@test.p360o.com", "A0UKjUhaOaERhYh26CI4");
+            
             String title = driver.Title;
             Console.WriteLine(title);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            IWebElement menuBtn = driver.FindElement(By.XPath("//button[@id='MainMenuOpenButton']"));
+            IWebElement menuBtn = driver.FindElement(By.XPath("//button[@id='MainMenuButton']"));
             menuBtn.Click();
             IWebElement caseTitle = driver.FindElement(By.XPath("//*[@id=\"DeltaTopNavigation\"]/div/nav/div[2]/div[2]/ul/li/ul/li[1]/div/button/span/div"));
             caseTitle.Click();
