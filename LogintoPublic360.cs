@@ -8,20 +8,14 @@ using SeleniumExtras.PageObjects;
 
 namespace CreateCase
 {
-    public class LogintoPublic360
+    public class LogintoCMS
     {
         public  IWebDriver driver;
-       /* public LogintoPublic360(IWebDriver driver)
-        {
-            
-            this.driver = driver;
-
-        }*/
-
+       
         
 
 
-        [FindsBy(How = How.Name , Using = "loginfmt")]
+        [FindsBy(How = How.Name , Using = "login")]
         public IWebElement user_name { get; set; }
 
         [FindsBy(How = How.Id, Using = "i0118")]
