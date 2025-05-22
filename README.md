@@ -1,0 +1,1 @@
+This repository basically contains the page factory implementation in a selenium with C# project. Here I have implemented page object model in a login scenario and have used page factory for element search optimization.
